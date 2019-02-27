@@ -11,16 +11,18 @@ import org.openqa.selenium.firefox.FirefoxDriver
 
 waiting {
     timeout = 5
-    atCheckWaiting = true
 }
 
 environments {
+    atCheckWaiting = true
 
     // run via “./gradlew chromeTest”
     // See: http://code.google.com/p/selenium/wiki/ChromeDriver
     chrome {
+
         driver = {
             ChromeOptions co = new ChromeOptions()
+            co.setBinary("C:\\Program Files (x86)\\SRWare Iron\\chrome.exe")   // I use SRWare Iron - secure version of chrome
             co.addArguments("" +
                 "--window-size=1024,768",
                 "--disable-extensions"

@@ -9,11 +9,12 @@ class LiquidoHomePage extends Page {
 
     //static atCheckWaiting = true
 
-    static at = { $("#LiquidoHomePage").size() == 1 }
+    static url = "/"
 
-    /*
+    static at = { $("#LiquidoHome").size() == 1 }
+
     static content = {
-        manualsMenu { module(ManualsMenuModule) }
+      registerButton { $("#RegisterButton") }
     }
-    */
+
 }
