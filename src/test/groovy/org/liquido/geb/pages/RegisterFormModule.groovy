@@ -1,4 +1,4 @@
-package org.liquido.geb
+package org.liquido.geb.pages
 
 import geb.Module
 import geb.module.TextInput

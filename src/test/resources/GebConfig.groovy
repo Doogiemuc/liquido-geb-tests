@@ -8,6 +8,8 @@
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.remote.CapabilityType
+import org.openqa.selenium.remote.RemoteWebDriver
 
 waiting {
     timeout = 5
@@ -29,6 +31,20 @@ environments {
             )
             co.setExperimentalOption("useAutomationExtension", false)
             new ChromeDriver(co)
+        }
+    }
+
+    remote {
+        atCheckWaiting = 2
+
+        driver = {
+            def remoteWebDriverServerUrl = new URL("http://localhost:9515")
+            ChromeOptions co = new ChromeOptions()
+            co.setBinary("C:\\Program Files (x86)\\SRWare Iron\\chrome.exe")   // I use SRWare Iron - secure version of chrome
+            //co.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS)
+            co.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true)
+
+            new RemoteWebDriver(remoteWebDriverServerUrl, co)
         }
     }
 

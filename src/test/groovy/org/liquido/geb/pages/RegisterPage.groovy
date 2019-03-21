@@ -1,4 +1,4 @@
-package org.liquido.geb
+package org.liquido.geb.pages
 
 import geb.Page
 
@@ -13,5 +13,6 @@ class RegisterPage extends Page {
 
     static content = {
         form { module RegisterFormModule }
+        registerSuccess { $("#registerSuccess") }
     }
 }
